@@ -36,7 +36,7 @@ object pepe {
         return categoria.neto()
     }
     method extraResultado() {
-      return bonoResultado.calcularBono(self.neto())
+      return bonoResultado.calcularBono(self)
     }
     method extraPresentismo() {
       return bonoPresentismo.calcularBono(self.neto(), faltas )
@@ -64,19 +64,20 @@ object cadete {
 
 
 object bonoPorcentaje {
-    method calcularBono(neto) {
-        return neto * 0.10
+    
+    method calcularBono(empleado) {
+        return empleado.neto() * 0.10
     }
 }
 
 object bonoMontoFijo {
-    method calcularBono(neto) {
+    method calcularBono(empleado) {
         return 800
     }
 }
 
 object bonoNulo {
-    method calcularBono(neto) {
+    method calcularBono(empleado) {
         return 0
     }
 }
