@@ -1,4 +1,4 @@
-/* 
+/*
 // lo hice de 2 maneras hasta con los test esta es la mas corta pero con la explicacion del profe esta mal aunque funcione
 object pepe {
 	method sueldo(categoria, bonoPorResultado, bonoPorPresentismo, diasFaltados) {
@@ -7,7 +7,7 @@ object pepe {
 }
 */
 
-
+/
 object pepe {
 
     var categoria = cadete
@@ -62,7 +62,7 @@ object cadete {
     }
 }
 
-
+/
 object bonoPorcentaje {
     
     method calcularBono(empleado) {
@@ -81,6 +81,30 @@ object bonoNulo {
         return 0
     }
 }
+*/
+
+/*
+object bonoPorcentaje {
+    
+    method calcularBono(neto) {
+        return neto * 0.10
+    }
+}
+
+object bonoMontoFijo {
+    method calcularBono(neto) {
+        return 800
+    }
+}
+
+object bonoNulo {
+    method calcularBono(neto) {
+        return 0
+    }
+}
+
+
+*/
 
 object bonoPresentismoNormal {
     method calcularBono(neto, diasFaltados) {

@@ -2,7 +2,7 @@ import pepe.*
 
 describe "Sueldo Pepe" {
 	
-	
+	/
 	test "Pepe cadete, bono resultado monto fijo, bono presentismo normal, 3 dias faltados"{
 		
 		pepe.categoria(cadete)
