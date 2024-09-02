@@ -1,11 +1,5 @@
-/*
+
 // lo hice de 2 maneras hasta con los test esta es la mas corta pero con la explicacion del profe esta mal aunque funcione
-object pepe {
-	method sueldo(categoria, bonoPorResultado, bonoPorPresentismo, diasFaltados) {
-      return categoria.neto() + bonoPorResultado.calcularBono(categoria.neto()) + bonoPorPresentismo.calcularBono(categoria.neto(), diasFaltados)
-    }
-}
-*/
 
 /
 object pepe {
@@ -27,7 +21,10 @@ object pepe {
             bonoPresentismo = _bonoPresentismo
     }
     method faltas(_faltas) {
-            faltas = _faltas
+            faltas = _faltas        
+    }
+    method faltas() {
+      return faltas
     }
     method sueldo() {
         return self.neto() + self.extraResultado() + self.extraPresentismo()
@@ -39,15 +36,11 @@ object pepe {
       return bonoResultado.calcularBono(self)
     }
     method extraPresentismo() {
-      return bonoPresentismo.calcularBono(self.neto(), faltas )
+      return bonoPresentismo.calcularBono(self)
     }
     
 
 }
-
-*/
-
-
 
 
 object gerente {
@@ -81,9 +74,71 @@ object bonoNulo {
         return 0
     }
 }
+
+
+
+
+object bonoPresentismoNormal {
+    method calcularBono(empleado) {
+        if (empleado.faltas() == 0) {
+            return 2000
+        } else if (empleado.faltas() == 1) {
+            return 1000
+        } else {
+            return 0
+        }
+    }
+}
+
+object bonoPresentismoAjuste {
+    method calcularBono(empleado) {
+        if (empleado.faltas() == 0) {
+            return 100
+        } else {
+            return 0
+        }
+    }
+}
+
+object bonoPresentismoDemagogico {
+    method calcularBono(empleado) {
+        if (empleado.neto() < 18000) {
+            return 500
+        } else {
+            return 300
+        }
+    }
+}
+
+object bonoPresentismoNulo {
+    method calcularBono(empleado) {
+        return 0
+    }
+}
+
 */
 
 /*
+
+// lo hice de 2 maneras hasta con los test esta es la mas corta pero con la explicacion del profe esta mal aunque funcione
+object pepe {
+	method sueldo(categoria, bonoPorResultado, bonoPorPresentismo, diasFaltados) {
+      return categoria.neto() + bonoPorResultado.calcularBono(categoria.neto()) + bonoPorPresentismo.calcularBono(categoria.neto(), diasFaltados)
+    }
+}
+
+object gerente {
+    method neto() {
+        return 15000
+    }
+}
+
+object cadete {
+    method neto(){
+        return 20000
+    }
+}
+
 object bonoPorcentaje {
     
     method calcularBono(neto) {
@@ -102,9 +157,6 @@ object bonoNulo {
         return 0
     }
 }
-
-
-*/
 
 object bonoPresentismoNormal {
     method calcularBono(neto, diasFaltados) {
@@ -144,7 +196,7 @@ object bonoPresentismoNulo {
     }
 }
 
-
+*/
 
 
 
